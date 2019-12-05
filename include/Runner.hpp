@@ -17,6 +17,5 @@ public:
     static void cache_levels(vector <int> &levels);
 
     static void run(vector <int> &levels);
-
 };
 #endif // INCLUDE_RUNNER_HPP_

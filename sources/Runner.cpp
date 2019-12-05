@@ -25,9 +25,10 @@ void Runner::cache_levels(vector <int> &levels){
     }
 }
 void Runner::create(vector<int> &level, int size) {
+    static unsigned int onek;
     level.resize(size * 1024 * 1024 / sizeof(int));
     for (unsigned int i = 0; i < level.size(); i++) {
-        level[i] = rand() % 1000;
+        level[i] = rand_r(&onek) % 1000;
     }
 }
 void Runner::heat(vector <int> &level){

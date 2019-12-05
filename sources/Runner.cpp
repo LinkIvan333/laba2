@@ -3,22 +3,22 @@
 #include <Runner.hpp>
 void Runner::cache_levels(vector <int> &levels){
     int size;
-    std::cout<<"Введите количество уровней кэша = ";
-    std::cin>>size;
-    int *arr=new int[size];
-    for(int i=0;i<size;i++){
+    std::cout << "Введите количество уровней кэша = ";
+    std::cin >> size;
+    int *arr = new int[size];
+    for(int i = 0;i < size;i++){
         std::cout << "№" << i + 1 << " Размер уровня = ";
         std::cin >> arr[i];
     }
     levels.resize(size+2);
-    levels[0]=arr[0]/2;
+    levels[0] = arr[0]/2;
     levels[levels.size()-1]=arr[size-1]*3/2;
-    for(unsigned int i=1;i<(levels.size()-1);i++){
-        levels[i]=arr[i-1];
+    for(unsigned int i = 1;i < (levels.size()-1);i++){
+        levels[i] = arr[i-1];
     }
     delete[] arr;
-    int i=0;
-    for(auto& e: levels) {
+    int i = 0;
+    for (auto& e : levels) {
         std::cout << "№" << i + 1 << " Level's size = "<<e<<" "<<std::endl;
         i++;
     }
@@ -30,13 +30,13 @@ void Runner::create(vector<int> &level, int size) {
     }
 }
 void Runner::heat(vector <int> &level){
-    for(unsigned int i=0;i<level.size();i++){
+    for(unsigned int i = 0;i < level.size();i++){
         level[i];
     }
 }
 time_t Runner::timer(vector <int> &level){
     auto start = std::chrono::system_clock::now();
-    for(int j=0;j<1000;j++) {
+    for(int j = 0;j < 1000;j++) {
         for (unsigned int i = 0; i < level.size(); i++) {
             level[i];
         }

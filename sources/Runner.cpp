@@ -3,7 +3,7 @@
 #include <Runner.hpp>
 void Runner::cache_levels(vector <int> &levels){
     int size;
-    std::cout<<"Введите количество уровней кэша ";
+    std::cout<<"Введите количество уровней кэша = ";
     std::cin>>size;
     int *arr=new int[size];
     for(int i=0;i<size;i++){
@@ -24,8 +24,33 @@ void Runner::cache_levels(vector <int> &levels){
     }
 }
 void Runner::create(vector<int> &level, int size) {
-    level.resize(size * 1024 * 1024 * sizeof(int));
-    for (int i = 0; i < 1000; i++) {
+    level.resize(size * 1024 * 1024 / sizeof(int));
+    for (unsigned int i = 0; i < level.size(); i++) {
         level[i] = rand() % 1000;
+    }
+}
+void Runner::heat(vector <int> &level){
+    for(unsigned int i=0;i<level.size();i++){
+        level[i];
+    }
+}
+time_t Runner::timer(vector <int> &level){
+    auto start = std::chrono::system_clock::now();
+    for(int j=0;j<1000;j++) {
+        for (unsigned int i = 0; i < level.size(); i++) {
+            level[i];
+        }
+    }
+    auto end = std::chrono::system_clock::now();
+    time_t start_time = std::chrono::system_clock::to_time_t(start);
+    time_t end_time = std::chrono::system_clock::to_time_t(end);
+    return end_time-start_time;
+}
+void Runner::run(vector<int> & levels) {
+    for(unsigned int i=0;i<levels.size();i++){
+        vector <int> level;
+        create(level,levels[i]);
+        heat(level);
+        std::cout << "Эксперимент №" << i + 1 << " time  = " << timer(level) << std::endl;
     }
 }

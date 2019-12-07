@@ -4,18 +4,29 @@
 #include <vector>
 #include <iostream>
 #include <chrono>
+#include <random>
+#include <algorithm>
+#include <array>
 using std::vector;
 class Runner{
 private:
-    static void create(vector <int> &level, int size);
+    vector <int> levels;
 
-    static void heat(vector <int> &level);
+    int size;
 
-    static time_t timer(vector <int> &level);
+     void create(vector <int> &level,int a);
+
+     void heat(vector <int> &level);
+
+    time_t timer1(vector <int> &level);
+
+     time_t timer2(vector <int> &level);
+
+    time_t timer3(vector <int> &level);
 
 public:
-    static void cache_levels(vector <int> &levels);
-
-    static void run(vector <int> &levels);
+    void run();
+    void cache_levels();
+    Runner(int a);
 };
 #endif // INCLUDE_RUNNER_HPP_

@@ -2,11 +2,11 @@
 
 #include <Runner.hpp>
 Runner::Runner(int a){
-   size=a;
+   size = a;
    cache_levels();
    run();
-
 }
+
 void Runner::cache_levels(){
     int *arr = new int[size];
     for (int i = 0; i < size; i++) {
@@ -28,7 +28,7 @@ void Runner::cache_levels(){
     }
 }
 
-void Runner::create(vector<int> &level,int a) {
+void Runner::create(vector<int> &level, int a) {
     static unsigned int onek;
     level.resize(a * 1024 * 1024 / sizeof(int));
     for (unsigned int i = 0; i < level.size(); i++) {
@@ -66,7 +66,7 @@ time_t Runner::timer2(vector <int> &level){
 }
 time_t Runner::timer3(vector <int> &level){
     auto start = std::chrono::system_clock::now();
-    std::random_shuffle(level.begin(),level.end());
+    std::random_shuffle(level.begin(), level.end());
     for (int j = 0; j < 1000; j++) {
         for (unsigned int i =level.size()-1 ; i >0 ; i--) {
             level[i];
@@ -80,9 +80,10 @@ time_t Runner::timer3(vector <int> &level){
 void Runner::run() {
     for (unsigned int i = 0; i < levels.size(); i++){
         vector <int> level;
-        create(level,levels[i]);
+        create(level, levels[i]);
         heat(level);
         std::cout << "Эксперимент №" << i + 1 <<
-        " time  = " << timer1(level) << " "<< timer2(level) << " "<< timer3(level) << std::endl;
+        " time  = " << timer1(level) << " "<< timer2(level)
+        << " "<< timer3(level) << std::endl;
     }
 }

@@ -3,7 +3,7 @@
 int main() {
     int a;
     std::cout << "Введите количество уровней кэша = ";
-    std::cin>>a;
+    std::cin >> a;
     Runner Te(a);
     return 0;
 }

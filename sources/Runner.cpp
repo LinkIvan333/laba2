@@ -16,7 +16,7 @@ void Runner::cache_levels(){
     levels.resize(size+2);
     levels[0] = arr[0]/2;
     levels[levels.size()-1] = arr[size-1]*3/2;
-    for (unsigned int i = 1; i < (levels.size()-1); i++){
+    for (unsigned int i = 1; i < (levels.size()-1); i++) {
         levels[i] = arr[i-1];
     }
     delete[] arr;
@@ -35,11 +35,13 @@ void Runner::create(vector<int> &level, int a) {
         level[i] = rand_r(&onek) % 1000;
     }
 }
+
 void Runner::heat(vector <int> &level){
-    for (unsigned int i = 0; i < level.size(); i++){
+    for (unsigned int i = 0; i < level.size(); i++) {
         level[i];
     }
 }
+
 time_t Runner::timer1(vector <int> &level){
     auto start = std::chrono::system_clock::now();
     for (int j = 0; j < 1000; j++) {
@@ -52,6 +54,7 @@ time_t Runner::timer1(vector <int> &level){
     time_t end_time = std::chrono::system_clock::to_time_t(end);
     return end_time-start_time;
 }
+
 time_t Runner::timer2(vector <int> &level){
     auto start = std::chrono::system_clock::now();
     for (int j = 0; j < 1000; j++) {
@@ -64,11 +67,12 @@ time_t Runner::timer2(vector <int> &level){
     time_t end_time = std::chrono::system_clock::to_time_t(end);
     return end_time-start_time;
 }
+
 time_t Runner::timer3(vector <int> &level){
     auto start = std::chrono::system_clock::now();
     std::random_shuffle(level.begin(), level.end());
     for (int j = 0; j < 1000; j++) {
-        for (unsigned int i =level.size()-1 ; i >0 ; i--) {
+        for (unsigned int i = 0; i < level.size(); i++) {
             level[i];
         }
     }
@@ -77,6 +81,7 @@ time_t Runner::timer3(vector <int> &level){
     time_t end_time = std::chrono::system_clock::to_time_t(end);
     return end_time-start_time;
 }
+
 void Runner::run() {
     for (unsigned int i = 0; i < levels.size(); i++){
         vector <int> level;

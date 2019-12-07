@@ -14,19 +14,19 @@ private:
 
     int size;
 
-     void create(vector <int> &level,int a);
+    void create(vector <int> &level, int a);
 
-     void heat(vector <int> &level);
+    void heat(vector <int> &level);
 
     time_t timer1(vector <int> &level);
 
-     time_t timer2(vector <int> &level);
+    time_t timer2(vector <int> &level);
 
     time_t timer3(vector <int> &level);
 
 public:
     void run();
     void cache_levels();
-    Runner(int a);
+    explicit Runner(int a);
 };
 #endif // INCLUDE_RUNNER_HPP_

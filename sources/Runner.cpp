@@ -23,7 +23,7 @@ void Runner::cache_levels(){
     int i = 0;
     for (auto& e : levels) {
         std::cout << "№" << i + 1 << " "
-        "Level's size = " << e << " " << std::endl;
+        "Размер уровня во время эксперимента = " << e << "mb" << std::endl;
         i++;
     }
 }

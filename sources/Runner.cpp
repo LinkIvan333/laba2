@@ -23,7 +23,7 @@ void Runner::cache_levels(){
     int i = 0;
     for (auto& e : levels) {
         std::cout << "№" << i + 1 << " "
-        "Размер уровня во время эксперимента = " << e << "mb" << std::endl;
+        "Размер буфера во время эксперимента = " << e << "mb" << std::endl;
         i++;
     }
 }
@@ -88,7 +88,7 @@ void Runner::run() {
         create(level, levels[i]);
         heat(level);
         std::cout << "Эксперимент №" << i + 1 <<
-        " time  = " << timer1(level) << " "<< timer2(level)
-        << " "<< timer3(level) << std::endl;
+        "\nРазмер буфера = "<< levels[i] << "mb\nВремя =\n  Прямой проход: " << timer1(level) << "\n  Обратный проход: "<< timer2(level)
+        << "\n  Случайный проход: "<< timer3(level) << std::endl;
     }
 }

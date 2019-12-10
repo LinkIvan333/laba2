@@ -88,7 +88,8 @@ void Runner::run() {
         create(level, levels[i]);
         heat(level);
         std::cout << "Эксперимент №" << i + 1 <<
-        "\nРазмер буфера = "<< levels[i] << "mb\nВремя =\n  Прямой проход: " << timer1(level) << "\n  Обратный проход: "<< timer2(level)
+        "\nРазмер буфера = "<< levels[i] << "mb\nВремя =\n  "
+        "Прямой проход: " << timer1(level) << "\n  Обратный проход: "<< timer2(level)
         << "\n  Случайный проход: "<< timer3(level) << std::endl;
     }
 }
